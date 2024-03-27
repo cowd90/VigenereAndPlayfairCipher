@@ -149,8 +149,8 @@ public class VigenereCipher {
         message = msg;
         mappedKey = keyMap.toString();
 
-//        System.out.println("Message: " + message);
-//        System.out.println("key: " + mappedKey);
+        System.out.println("Message: " + message);
+        System.out.println("key: " + mappedKey);
     }
 
 }
