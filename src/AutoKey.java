@@ -1,14 +1,23 @@
 
 import java.lang.*;
+import java.util.Scanner;
 
 public class AutoKey {
 
     private static final String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private static Scanner in = new Scanner(System.in);;
 
     public static void main(String[] args)
     {
-        String msg = "ALLWORKANDNOPLAYMA";
-        String key = "WHENINRO";
+        System.out.print("Nhập văn bản: ");
+        String msg = in.nextLine();
+        msg = msg.toUpperCase();
+
+        //key input
+        System.out.print("Nhập khóa: ");
+        String key = in.next();
+        in.nextLine();
+        key = key.toUpperCase();
 
         // This if statement is all about java regular expression
         // [] for range
