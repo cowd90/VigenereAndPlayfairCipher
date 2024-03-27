@@ -19,12 +19,6 @@ public class AutoKey {
         in.nextLine();
         key = key.toUpperCase();
 
-        // This if statement is all about java regular expression
-        // [] for range
-        // // Extra \ is used to escape one \
-        // \\d acts as delimiter
-        // ? once or not at all
-        // . Any character (may or may not match line terminators)
         if (key.matches("[-+]?\\d*\\.?\\d+"))
             key = "" + alphabet.charAt(Integer.parseInt(key));
         String enc = autoEncryption(msg, key);
