@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
-public class VigenereCipher {
+public class VigenereMethod2 {
 
     private static Scanner in;
     private static String message;
     private static String mappedKey;
 
     public static void main(String[] args){
-        System.out.println("Vigenere Cipher");
+        System.out.println("Vigenere Cipher 2");
         in = new Scanner(System.in);
         System.out.print("1.Mã hóa\n2.Giải mã\nChọn(1,2): ");
         int choice = in.nextInt();
@@ -136,12 +136,12 @@ public class VigenereCipher {
                     keyMap.append(key.charAt(j));
                     j++;
                 } else {
-                    //restarting the key from beginning once its length is complete
-                    // and its still not mapped to message
-                    j = 0;
-                    keyMap.append(key.charAt(j));
-                    j++; //without incrementing here, key's first letter will be mapped twice
-
+                    for (int k = 0; k < (msg.length() - key.length()); k++) {
+                        //restarting the key from beginning once its length is complete
+                        // and its still not mapped to message
+                        keyMap.append(msg.charAt(k));
+                    }
+                    break;
                 }
             } //if-else
 
@@ -149,8 +149,8 @@ public class VigenereCipher {
         message = msg;
         mappedKey = keyMap.toString();
 
-//        System.out.println("Message: " + message);
-//        System.out.println("key: " + mappedKey);
+        System.out.println("Message: " + message);
+        System.out.println("key: " + mappedKey);
     }
 
 }
